@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Plex IMDB Namer",
+    "description": "Generate the Plex file name for the media on an IMDB page.",
+    "version": "1.0",
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": "images/hello_extensions.png"
+    },
+    "content_scripts": [
+        {
+            "js": ["scripts/name-generator.js"],
+            "matches": [
+                "https://www.imdb.com/*"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": ["scripting", "storage"]
+}
